@@ -13,12 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','GameController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('games', 'GameController');
 Route::get('games/{game}/play', "GameController@play")->name('play');
+Route::get('games/{game}/stats', "GameController@stats")->name('stats');

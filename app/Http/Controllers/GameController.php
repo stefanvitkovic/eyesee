@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Game;
 use App\Level;
+use App\Stats;
 
 class GameController extends Controller
 {
@@ -16,8 +17,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::id();
-        $games = Game::where('user_id',$user_id)->get();
+        $games = Game::where('status',1)->get();
         return view('home',compact('games'));
     }
 
@@ -153,5 +153,10 @@ class GameController extends Controller
     public function play(Game $game)
     {
         return $game;
+    }
+
+    public function stats(Game $game)
+    {
+        return view('games.stats',compact('game'));
     }
 }

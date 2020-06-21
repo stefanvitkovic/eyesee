@@ -47,7 +47,7 @@
                             @endforeach
                         @endif
                         </div>
-                        <a class='btn btn-md btn-success mt-3' href="{{ route('play',['game'=>$game->id])" class="btn btn-primary mt-3">Play</a>
+                        <!-- <a class='btn btn-md btn-success mt-3' href="{{ route('play',['game'=>$game->id])" class="btn btn-primary mt-3">Play</a> -->
                     
                     </form>
                 </div>

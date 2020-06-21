@@ -35,7 +35,7 @@
                             <td>{{ $game->levels->count() }}</td>
                             <td>{{ ($game->status) ? 'published' : 'unpublished' }}</td>
                             <td class='text-center'>
-                                <a class="btn btn-outline-info btn-sm" href="{{ route('games.show',['game' => $game->id]) }}">Play</a>
+                                <a class="btn btn-outline-info btn-sm" href="{{ route('play',['game' => $game->id]) }}">Play</a>
                                 <a class="btn btn-outline-dark btn-sm" href="{{ route('stats',['game' => $game->id]) }}">Stats</a>
                             </td>
                         </tr>

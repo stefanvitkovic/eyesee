@@ -17,7 +17,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::where('status',1)->get();
+        $games = Game::where('status',1)->has('levels')->get();
         return view('home',compact('games'));
     }
 
@@ -152,7 +152,7 @@ class GameController extends Controller
 
     public function play(Game $game)
     {
-        return $game;
+        return view('games.play',compact('game'));
     }
 
     public function stats(Game $game)

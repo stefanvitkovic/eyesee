@@ -17,7 +17,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::with('levels','levels.game','levels.stats','user')->get();
+        $games = Game::has('levels')->with('levels')->where('status',1)->get();
         return response()->json(['data'=>$games]);
     }
 
@@ -48,7 +48,7 @@ class GameController extends Controller
         ]);        
 
         $level = Level::find($request->level_id);
-        
+
         $stats = new Stats;
             $stats->user_id = $request->user_id;
             $stats->level_id = $request->level_id;

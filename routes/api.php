@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::post('/login','Api\LoginController@login');
+Route::group(['middleware' => 'auth:api'], function () {
+
+    Route::get('/games','Api\GameController@index');
+    Route::get('/games/{game}','Api\GameController@show');
+
+    Route::post('/games/{game}/level/{level}','Api\GameController@store');
+
 });

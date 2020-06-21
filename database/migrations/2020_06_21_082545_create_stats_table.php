@@ -21,7 +21,7 @@ class CreateStatsTable extends Migration
             $table->foreign('level_id')->references('id')->on('levels');
             $table->integer('hit');
             $table->integer('miss');
-            $table->integer('left');
+            $table->integer('left')->nullable();
             $table->timestamps();
         });
     }

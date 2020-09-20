@@ -32,6 +32,7 @@
                     <div class='row text-center mt-5 mb-5'>
                         <input type='text' min='1' max='1' style=' margin: 0 auto;' name='input_letter' id='input_letter'>
                     </div>
+                    <div>Test</div>
 
                     <div class='row text-center'>
                         @php 
